@@ -1,4 +1,5 @@
 name: TanFlight
-version: '1.0-SNAPSHOT'
+version: '${version}'
 main: org.stark.tanFlight.TanFlight
 api-version: '1.20'
+depend: [TownsAndNations]

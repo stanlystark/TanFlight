@@ -1,0 +1,12 @@
+prefix: "&a[TanFlight] &7"
+
+messages:
+  noPermissions: "У вас нет прав для выполнения этой команды."
+  notPlayer: "Команда доступна только игрокам."
+  playerNotFound: "Игрок не найден."
+  notInTerritory: "Ты не находишься ни в каком городе или регионе."
+  flightEnabled: "Полёт включён."
+  flightDisabled: "Полёт отключён."
+  cannotFlyHere: "Ты не можешь летать здесь!"
+  configReloaded: "Конфиг перезагружен!"
+  leaveFromTerritory: "&cТы покинул территорию, где можешь летать."
