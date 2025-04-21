@@ -10,7 +10,6 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 import static org.stark.tanFlight.TanFlight.LOGGER;
-import static org.stark.tanFlight.utils.FlightMessage.getMessage;
 
 public class CommandRegistrar {
 

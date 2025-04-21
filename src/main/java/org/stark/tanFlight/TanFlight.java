@@ -26,7 +26,7 @@ public final class TanFlight extends JavaPlugin {
 
         LOGGER.info("Plugin enabled.");
 
-        CommandRegistrar.registerCommand(this, "tanfly", new TflyCommand(), "Flight", null, new TflyCommand());
+        CommandRegistrar.registerCommand(this, "tanfly", new TflyCommand(), "Flight", null);
         getServer().getPluginManager().registerEvents(new FlightRegionListener(), this);
     }
 
