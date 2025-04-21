@@ -17,6 +17,7 @@ import org.tan.api.interfaces.TanTerritory;
 import static org.stark.tanFlight.TanFlight.LOGGER;
 import static org.stark.tanFlight.utils.CanFlightChecker.*;
 import static org.stark.tanFlight.utils.FlightMessage.getMessage;
+import static org.stark.tanFlight.utils.PermissionNodes.FLY_RELOAD;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class TflyCommand implements CommandExecutor, TabCompleter {
 
         if (args.length == 1 && args[0].equalsIgnoreCase("reload")) {
             // Проверка прав на перезагрузку конфига
-            if (sender.hasPermission("tanfly.reload") || sender.isOp()) {
+            if (sender.hasPermission(FLY_RELOAD) || sender.isOp()) {
                 TanFlight.getInstance().reloadConfig();
                 sender.sendMessage(getMessage("configReloaded"));
             } else {

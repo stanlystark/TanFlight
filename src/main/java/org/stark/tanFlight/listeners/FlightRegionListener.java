@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.stark.tanFlight.TanFlight;
 import org.tan.api.TanAPI;
 import org.tan.api.getters.TanClaimManager;
 import org.tan.api.getters.TanPlayerManager;
@@ -31,12 +32,9 @@ public class FlightRegionListener implements Listener {
 
         Player player = event.getPlayer();
 
-        if (!player.getAllowFlight() || !player.getGameMode().equals(GameMode.SURVIVAL)) return;
+        if (!player.getGameMode().equals(GameMode.SURVIVAL)) return;
 
-        Location to = event.getTo();
-        if (to == null) return;
-
-        Optional<TanTerritory> optTerritory = claimManager.getTerritoryOfBlock(to.getBlock());
+        Optional<TanTerritory> optTerritory = claimManager.getTerritoryOfBlock(event.getTo().getBlock());
         Optional<TanPlayer> optTanPlayer = playerManager.get(player.getUniqueId());
 
         // Проверка на отсутствие игрока в системе
@@ -50,10 +48,22 @@ public class FlightRegionListener implements Listener {
 
         boolean canFly = territory != null && canPlayerFlyInTerritory(player, tanPlayer, territory);
 
-        if (!canFly) {
+        boolean autoFlight = TanFlight.getInstance().getConfig().getBoolean("options.autoFlight", false);
+
+        if (player.getAllowFlight() && !canFly) {
             player.setAllowFlight(false);
             player.setFlying(false);
             player.sendMessage(getMessage("leaveFromTerritory"));
+        } else {
+            if (autoFlight && !player.getAllowFlight() && canFly) {
+                boolean autoFlightMessage = TanFlight.getInstance().getConfig().getBoolean("options.autoFlightMessage", true);
+
+                player.setAllowFlight(true);
+                player.setFlying(true);
+                if (autoFlightMessage) {
+                    player.sendMessage(getMessage("autoFlight"));
+                }
+            }
         }
     }
 }
