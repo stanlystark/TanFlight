@@ -1,4 +1,4 @@
 name: TanFlight
 version: '1.0-SNAPSHOT'
 main: org.stark.tanFlight.TanFlight
-api-version: '1.19'
+api-version: '1.20'
