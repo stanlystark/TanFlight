@@ -11,13 +11,14 @@ options:
   autoFlightMessage: true
 
 messages:
-  noPermissions: "У вас нет прав для выполнения этой команды."
-  notPlayer: "Команда доступна только игрокам."
-  playerNotFound: "Игрок не найден."
-  notInTerritory: "Ты не находишься ни в каком городе или регионе."
-  flightEnabled: "&eПолёт включён."
-  flightDisabled: "&cПолёт отключён."
-  cannotFlyHere: "Ты не можешь летать здесь!"
-  configReloaded: "Конфиг перезагружен!"
-  leaveFromTerritory: "&cТы покинул территорию, где можешь летать."
-  autoFlight: "&eПолёт автоматически активирован."
+  noPermissions: "You don't have permission to execute this command."
+  notPlayer: "This command is only available to players."
+  playerNotFound: "Player not found."
+  notInTerritory: "You are not in any town or region."
+  flightEnabled: "&eFlight enabled."
+  flightDisabled: "&cFlight disabled."
+  cannotFlyHere: "You can't fly here!"
+  configReloaded: "Config reloaded!"
+  leaveFromTerritory: "&cYou left the territory where you can fly."
+  autoFlight: "&eFlight automatically enabled."
+
