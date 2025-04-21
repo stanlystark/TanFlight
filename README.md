@@ -27,5 +27,5 @@ ___
 
 - options.autoFlight = __false__
     - If active, flight will automatically turn on when entering a town or region where you can fly.
-- options.autoFlightMessage = __false__
+- options.autoFlightMessage = __true__
     - If active, players will receive a notification in the chat that the flight is activated.
