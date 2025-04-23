@@ -4,6 +4,8 @@ __Required__: [[TaN] Towns & Nations](https://www.spigotmc.org/resources/tan-tow
 
 Just fly inside your towns and regions.
 
+[__Download__](https://github.com/stanlystark/TanFlight/releases)
+
 ___
 
 ## Commands:
